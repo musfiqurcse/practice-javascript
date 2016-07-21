@@ -1,0 +1,123 @@
+
+<meta name="robots" content="noindex">
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+    <h1>Read my page</h1>
+  <div id="myProgress">
+  <div id="myBar"></div>
+</div>
+<progress id=prog min=0 max=2000 value=0></progress>
+  <message id="message"></message>
+  
+<script id="jsbin-javascript">
+var d1=new Date();
+var firstTime=d1.getMinutes()+":"+d1.getSeconds()+":"+d1.getMilliseconds();
+
+//here is working code start for
+var streeNumber=90;
+streeNumber="stop";
+//window.alert(streeNumber);
+
+
+var a;
+function add(tag){
+  tag+=a;
+  return tag;
+}
+a=100;
+
+function write(message){
+  document.getElementById('message').innerHTML+=message+'<br>';
+}
+write(add(20));
+var hasValue=null;
+if(hasValue){
+  write("has value");
+}
+
+//undefined
+
+//It represents unknown value
+var under;
+if(!under){
+  write("under is true");
+}
+
+//javascript number
+//alert(Math.random());
+function circumfarance(number){
+  return number*Math.acos(-1);
+}
+write(circumfarance(10));
+
+//OBJECT
+
+var empty={};
+write(empty.toString());
+var tim=new Object({});
+tim.name="Tim Bob";
+write(tim.name);
+write([1,2,3].toString());
+write(/\d?-\d{3}/.toString());
+var john={
+  name:"John Blaine"
+};
+john.toString=function(){
+  return "name: "+this.name +" Age:"+(9).toString();
+  
+};
+
+write(john.toString());
+
+
+//Equality
+//== type coercion
+//two object different 
+var sec="1";
+var sec1=1;
+if(sec===sec1){
+  write("== is happening type coericion");
+}
+else{
+  write("=== is helping for removing type coercion");
+}
+
+
+var joe={name:"joe"};
+var joe2={name:"joe"};
+write("First object check:"+(joe===joe2)+"<br>");
+write("First object check:"+(joe.name===joe2.name)+"<br>");
+
+d1=new Date();
+var newT=d1;
+var secondTime=d1.getMinutes()+":"+d1.getSeconds()+":"+d1.getMilliseconds();
+write(firstTime+"<br> Start Second"+secondTime);
+
+
+var width=0;
+
+var id =setInterval(frame,100);
+  function frame() {
+    if (document.getElementById("prog").value == 1000) {
+      clearInterval(id);
+      var dcheck=new Date();
+      write((dcheck.getSeconds()-d1.getSeconds())+":"+(dcheck.getMilliseconds()+1000-d1.getMilliseconds()));
+    } else {
+      var val=document.getElementById("prog").value;
+          document.getElementById("prog").value=(Number(val)+50).toString();
+     // write(width);
+      width++;
+      //elem.style.width = width + '%';
+    }
+  }
+
+move();
+</script>
+</body>
+</html>
